@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@theme {
+  --color-primary: #228B22;
+  --color-primary-dark: #1a6b1a;
+  --color-primary-light: #2eaa2e;
+  --color-secondary: #8B4513;
+  --color-secondary-light: #a0522d;
+  --color-accent: #FFD700;
+  --color-accent-dark: #DAA520;
+  --color-beige: #F5F5DC;
+  --color-cream: #FFFEF7;
+  --color-dark: #1a1a1a;
+  --color-dark-green: #0d3d0d;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', system-ui, sans-serif;
+}
+
+/* ============ BASE STYLES ============ */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-dark);
+  background: var(--color-cream);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}
+
+/* ============ HERO VIDEO ============ */
+.hero-video-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(13, 61, 13, 0.85) 0%,
+    rgba(34, 139, 34, 0.6) 50%,
+    rgba(13, 61, 13, 0.75) 100%
+  );
+}
+
+/* ============ GRAYSCALE → COLOR EFFECT ============ */
+.img-grayscale {
+  filter: grayscale(1);
+  transition: filter 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.img-grayscale:hover {
+  filter: grayscale(0) saturate(1.2);
+  transform: scale(1.05);
+}
+
+/* ============ ANIMATED GRADIENT TEXT ============ */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent), var(--color-primary));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 4s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+}
+
+/* ============ GLOW EFFECTS ============ */
+.card-glow {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.card-glow:hover {
+  box-shadow: 0 0 30px rgba(34, 139, 34, 0.3),
+              0 20px 60px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+}
+
+/* ============ PULSE CTA ============ */
+.cta-pulse {
+  animation: ctaPulse 2.5s ease-in-out infinite;
+}
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 139, 34, 0.5); }
+  50% { box-shadow: 0 0 0 12px rgba(34, 139, 34, 0); }
+}
+
+/* ============ FLOATING ANIMATION ============ */
+.float-animation {
+  animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ============ TYPEWRITER ============ */
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--color-accent);
+  animation: typewriter 3.5s steps(60) 0.5s forwards,
+             blink 0.8s step-end infinite;
+  width: 0;
+}
+@keyframes typewriter {
+  to { width: 100%; }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+/* ============ SHIMMER LOADING ============ */
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(34, 139, 34, 0.05) 25%,
+    rgba(34, 139, 34, 0.15) 50%,
+    rgba(34, 139, 34, 0.05) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============ LEAF DECORATION ============ */
+.leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cpath d='M30 5 C20 15, 10 25, 30 45 C50 25, 40 15, 30 5Z' fill='%23228B2208'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* ============ SECTION DIVIDER ============ */
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ============ WHATSAPP FLOAT ============ */
+.whatsapp-float {
+  animation: whatsappBounce 2s ease-in-out infinite;
+}
+@keyframes whatsappBounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  60% { transform: translateY(-4px); }
+}
+
+/* ============ PARALLAX GRAIN ============ */
+.grain-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ============ ACCORDION ============ */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.3s ease;
+  opacity: 0;
+}
+.accordion-content.open {
+  max-height: 800px;
+  opacity: 1;
+}
+
+/* ============ MAP CONTAINER ============ */
+.map-container {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ============ RESPONSIVE HELPERS ============ */
+@media (max-width: 768px) {
+  .typewriter {
+    white-space: normal;
+    width: 100%;
+    border-right: none;
+    animation: fadeInUp 1s ease forwards;
+  }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ============ LOADER ============ */
+.loader-spinner {
+  border: 4px solid rgba(34, 139, 34, 0.2);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
