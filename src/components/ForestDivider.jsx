@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 
 export default function ForestDivider({ color = 'currentColor', opacity = 1, flip = false }) {
-  const imageUrl = '/images/silhouette-foret-pins-petits-grands-arbres-feuilles-persistantes-blanc.png';
+  const imageUrl = '/fappk-niable/images/silhouette-foret-pins-petits-grands-arbres-feuilles-persistantes-blanc.png';
 
   return (
     <div 

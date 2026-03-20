@@ -53,11 +53,11 @@ export default function HeroSection() {
           loop
           playsInline
           preload="metadata"
-          poster="/images/site_FAPPK_1.webp"
+          poster="/fappk-niable/images/site_FAPPK_1.webp"
           className="w-full h-full object-cover"
         >
-          <source src="/images/hero.webm" type="video/webm" />
-          <source src="/images/hero.mp4" type="video/mp4" />
+          <source src="/fappk-niable/images/hero.webm" type="video/webm" />
+          <source src="/fappk-niable/images/hero.mp4" type="video/mp4" />
         </video>
         <div className="hero-video-overlay absolute inset-0" />
       </div>
