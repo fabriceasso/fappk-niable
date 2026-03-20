@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
+import prefix from '../utils/prefix';
 
 const testimonials = [
   {
@@ -11,14 +12,14 @@ const testimonials = [
     role: 'Restaurateur, Yamoussoukro',
     content: 'Nous nous approvisionnons régulièrement auprès de la Ferme Agropastorale Petit Kouassi pour nos besoins en lapins et poulets. La qualité de la viande est exceptionnelle et nos clients en redemandent. Un partenaire de confiance que nous recommandons vivement !',
     rating: 5,
-    image: '/images/temoignages/PDG_Kedesh.jpg'
+    image: `${prefix}/images/temoignages/PDG_Kedesh.jpg`
   },
   {
     name: 'Aka Francis',
     role: 'Client Particulier, Abidjan',
     content: 'J\'ai souscrit au plan mixte pour ma famille et je suis ravi du service. Les produits sont toujours frais et livrés à temps. C\'est un vrai bonheur de pouvoir manger des produits sains et locaux en toute simplicité.',
     rating: 5,
-    image: '/images/temoignages/Aka_Francis.jpg'
+    image: `${prefix}/images/temoignages/Aka_Francis.jpg`
   }
 ];
 

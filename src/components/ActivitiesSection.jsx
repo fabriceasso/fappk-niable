@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
+import prefix from '../utils/prefix';
 
 const activities = [
   {
@@ -174,7 +175,7 @@ export default function ActivitiesSection() {
                   
                   <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl group">
                     <Image
-                      src={`/images/${activity.id === 'aviculture' ? 'poulets_0.webp' : activity.id === 'cuniculture' ? 'lapins_0.webp' : activity.id === 'pisciculture' ? 'poissons_0.webp' : activity.id === 'porciculture' ? 'porcs_0.webp' : 'escargots_0.png'}`}
+                      src={`${prefix}/images/${activity.id === 'aviculture' ? 'poulets_0.webp' : activity.id === 'cuniculture' ? 'lapins_0.webp' : activity.id === 'pisciculture' ? 'poissons_0.webp' : activity.id === 'porciculture' ? 'porcs_0.webp' : 'escargots_0.png'}`}
                       alt={activity.title}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-110"

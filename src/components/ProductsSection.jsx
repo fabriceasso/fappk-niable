@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
+import prefix from '../utils/prefix';
 
 const products = [
   {
@@ -11,7 +12,7 @@ const products = [
     title: 'Poulets',
     description: 'Nous proposons des poulets élevés en plein air, offrant une viande riche en saveurs. Nos méthodes d\'élevage respectueuses de l\'environnement assurent la qualité supérieure de nos volailles.',
     price: '20 000',
-    image: '/images/poulets_0.webp',
+    image: `${prefix}/images/poulets_0.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2L9 4l-3 4-2 6v6h16v-6l-2-6-3-4-3-2zM9 22H7m10 0h-2m-8-2h12M4 14l3-2m13 2l-3-2M8 8V6m8 2V6" />
@@ -33,7 +34,7 @@ const products = [
     title: 'Canards',
     description: 'Nous proposons aussi ces canards élevés dans nos lacs, offrant une viande riche en saveurs. Nos méthodes d\'élevage assurent la qualité supérieure de nos volailles.',
     price: '20 000',
-    image: '/images/canards_0.png',
+    image: `${prefix}/images/canards_0.png`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12h18M5 12a7 7 0 0114 0M7 12V9a2 2 0 114 0v3m2 0V9a2 2 0 114 0v3" />
@@ -55,7 +56,7 @@ const products = [
     title: 'Lapins',
     description: 'Notre ferme se spécialise dans l\'élevage de lapins, garantissant des animaux en bonne santé et élevés dans des conditions optimales. Nos lapins sont nourris avec des aliments naturels.',
     price: '15 000',
-    image: '/images/lapins_0.webp',
+    image: `${prefix}/images/lapins_0.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14v2m-4-7V5a2 2 0 114 0v4m0 0V5a2 2 0 114 0v4m-8 5a4 4 0 108 0 4 4 0 00-8 0z" />
@@ -77,7 +78,7 @@ const products = [
     title: 'Poissons',
     description: 'Nous proposons une variété de poissons issus de notre propre élevage piscicole. Nos bassins sont gérés de manière durable pour garantir la fraîcheur.',
     price: '25 000',
-    image: '/images/poissons_0.webp',
+    image: `${prefix}/images/poissons_0.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 12c0 3.866-3.134 7-7 7s-7-3.134-7-7 3.134-7 7-7 7 3.134 7 7zm-3-2l-4 4m0-4l4 4" />
@@ -99,7 +100,7 @@ const products = [
     title: 'Porcs',
     description: 'Notre élevage de porcs est conduit avec le plus grand soin, en privilégiant une alimentation saine et un environnement propre.',
     price: '35 000',
-    image: '/images/porcs_0.webp',
+    image: `${prefix}/images/porcs_0.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -121,7 +122,7 @@ const products = [
     title: 'Escargots',
     description: 'Nous élevons des escargots dans un milieu contrôlé garantissant un goût unique et une chair tendre.',
     price: '35 000',
-    image: '/images/escargots_0.png',
+    image: `${prefix}/images/escargots_0.png`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z M12 14v7 M7 12l-5 5 M17 12l5 5" />
