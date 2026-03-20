@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import { motion, useInView } from 'framer-motion';
+import prefix from '../utils/prefix';
 import { useRef } from 'react';
 
 const links = [
@@ -34,7 +35,7 @@ export default function Footer() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-12 h-12 rounded-full overflow-hidden ring-2 ring-primary/40">
-                <Image src="/images/logo_FAPPK.jpeg" alt="FAPPK Logo" fill className="object-cover" />
+                <Image src={`${prefix}/images/logo_FAPPK.jpeg`} alt="FAPPK Logo" fill className="object-cover" />
               </div>
               <div>
                 <span className="font-heading text-xl font-bold text-white block">FAPPK</span>

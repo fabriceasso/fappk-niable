@@ -1,9 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import prefix from '../utils/prefix';
 
 export default function ForestDivider({ color = 'currentColor', opacity = 1, flip = false }) {
-  const imageUrl = '/fappk-niable/images/silhouette-foret-pins-petits-grands-arbres-feuilles-persistantes-blanc.png';
+  const imageUrl = `${prefix}/images/silhouette-foret-pins-petits-grands-arbres-feuilles-persistantes-blanc.png`;
 
   return (
     <div 

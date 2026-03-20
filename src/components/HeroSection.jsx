@@ -4,14 +4,15 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
+import prefix from '../utils/prefix';
 
 const heroSlides = [
-  { src: '/images/site_FAPPK_1.webp', alt: 'Ferme FAPPK Niablé' },
-  { src: '/images/poulets_0.webp', alt: 'Poulets fermiers' },
-  { src: '/images/lapins_0.webp', alt: 'Élevage de lapins' },
-  { src: '/images/poissons_0.webp', alt: 'Pisciculture' },
-  { src: '/images/porcs_0.webp', alt: 'Élevage porcin' },
-  { src: '/images/escargots_0.png', alt: 'Héliciculture' },
+  { src: `${prefix}/images/site_FAPPK_1.webp`, alt: 'Ferme FAPPK Niablé' },
+  { src: `${prefix}/images/poulets_0.webp`, alt: 'Poulets fermiers' },
+  { src: `${prefix}/images/lapins_0.webp`, alt: 'Élevage de lapins' },
+  { src: `${prefix}/images/poissons_0.webp`, alt: 'Pisciculture' },
+  { src: `${prefix}/images/porcs_0.webp`, alt: 'Élevage porcin' },
+  { src: `${prefix}/images/escargots_0.png`, alt: 'Héliciculture' },
 ];
 
 export default function HeroSection() {
@@ -53,11 +54,11 @@ export default function HeroSection() {
           loop
           playsInline
           preload="metadata"
-          poster="/fappk-niable/images/site_FAPPK_1.webp"
+          poster={`${prefix}/images/site_FAPPK_1.webp`}
           className="w-full h-full object-cover"
         >
-          <source src="/fappk-niable/images/hero.webm" type="video/webm" />
-          <source src="/fappk-niable/images/hero.mp4" type="video/mp4" />
+          <source src={`${prefix}/images/hero.webm`} type="video/webm" />
+          <source src={`${prefix}/images/hero.mp4`} type="video/mp4" />
         </video>
         <div className="hero-video-overlay absolute inset-0" />
       </div>
@@ -108,7 +109,7 @@ export default function HeroSection() {
             className="absolute top-0 right-8 pointer-events-none hidden lg:block"
           >
             <Image
-              src="/images/logo_hero.png"
+              src={`${prefix}/images/logo_hero.png`}
               alt="FAPPK Logo Hero"
               width={350}
               height={350}

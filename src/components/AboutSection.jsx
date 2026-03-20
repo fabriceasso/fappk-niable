@@ -4,6 +4,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
+import prefix from '../utils/prefix';
 
 const iconsPath = {
   plant: "M12 21a9.003 9.003 0 008.313-5.547 M12 21a9.003 9.003 0 01-8.313-5.547 M12 3V2 M12 21V12 M12 12l0-9 M8 7.5L12 12l4-4.5 M4 11.5L12 12l8-0.5",
@@ -89,18 +90,18 @@ export default function AboutSection() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src="/images/site_FAPPK_1.webp" alt="Ferme FAPPK" fill className="object-cover" />
+                  <Image src={`${prefix}/images/site_FAPPK_1.webp`} alt="Ferme FAPPK" fill className="object-cover" />
                 </div>
                 <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src="/images/poulets_1.webp" alt="Poulets fermiers" fill className="object-cover" />
+                  <Image src={`${prefix}/images/poulets_1.webp`} alt="Poulets fermiers" fill className="object-cover" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src="/images/lapins_1.webp" alt="Lapins" fill className="object-cover" />
+                  <Image src={`${prefix}/images/lapins_1.webp`} alt="Lapins" fill className="object-cover" />
                 </div>
                 <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src="/images/site_FAPPK_2.webp" alt="Site de la ferme" fill className="object-cover" />
+                  <Image src={`${prefix}/images/site_FAPPK_2.webp`} alt="Site de la ferme" fill className="object-cover" />
                 </div>
               </div>
             </div>

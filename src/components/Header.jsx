@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import prefix from '../utils/prefix';
 
 const navItems = [
   { label: 'Accueil', href: '#accueil' },
@@ -37,7 +38,7 @@ export default function Header() {
           {/* Logo */}
           <a href="#accueil" className="flex items-center gap-3 group">
             <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden ring-2 ring-primary/30 group-hover:ring-primary transition-all">
-              <Image src="/images/logo_FAPPK.jpeg" alt="FAPPK Logo" fill className="object-cover" />
+              <Image src={`${prefix}/images/logo_FAPPK.jpeg`} alt="FAPPK Logo" fill className="object-cover" />
             </div>
             <div className="hidden sm:block">
               <span className={`font-heading font-bold text-lg leading-tight block ${scrolled ? 'text-primary' : 'text-white'} transition-colors`}>
