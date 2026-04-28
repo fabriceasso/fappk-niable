@@ -178,7 +178,7 @@ function ProductCard({ product, index }) {
             src={product.image}
             alt={product.title}
             fill
-            className="object-cover img-grayscale group-hover:filter-none group-hover:saturate-[1.2] transition-all duration-700 group-hover:scale-110"
+            className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:saturate-[1.2]"
           />
           <div className={`absolute inset-0 bg-gradient-to-t ${product.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
           <div className="absolute top-4 left-4">

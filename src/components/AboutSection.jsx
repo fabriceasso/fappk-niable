@@ -1,7 +1,7 @@
 'use client';
 
-import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView, AnimatePresence } from 'framer-motion';
+import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
 import prefix from '../utils/prefix';
@@ -14,47 +14,111 @@ const iconsPath = {
 };
 
 const features = [
-  { 
+  {
     icon: (
       <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconsPath.plant} />
       </svg>
-    ), 
-    title: 'Agriculture Durable', 
-    desc: 'Pratiques respectueuses de l\'environnement' 
+    ),
+    title: 'Elevage Durable',
+    desc: 'Pratiques respectueuses de l\'environnement'
   },
-  { 
+  {
     icon: (
       <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconsPath.award} />
       </svg>
-    ), 
-    title: 'Qualité Supérieure', 
-    desc: 'Produits frais et naturels garantis' 
+    ),
+    title: 'Qualité Supérieure',
+    desc: 'Produits frais et naturels garantis'
   },
-  { 
+  {
     icon: (
       <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconsPath.truck} />
       </svg>
-    ), 
-    title: 'Livraison Gratuite', 
-    desc: 'Directement à votre domicile' 
+    ),
+    title: 'Livraison sur demande',
+    desc: 'Directement à votre domicile'
   },
-  { 
+  {
     icon: (
       <svg className="w-full h-full" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={iconsPath.heart} />
       </svg>
-    ), 
-    title: 'Bien-être Animal', 
-    desc: 'Élevage en plein air, sans OGM' 
+    ),
+    title: 'Bien-être Animal',
+    desc: 'Élevage en plein air, sans OGM'
   },
 ];
+
+const images = [
+  { id: 1, src: `${prefix}/images/site_FAPPK_1.webp`, alt: "Ferme FAPPK" },
+  { id: 2, src: `${prefix}/images/poulets_1.webp`, alt: "Poulets fermiers" },
+  { id: 3, src: `${prefix}/images/lapins_1.webp`, alt: "Lapins" },
+  { id: 4, src: `${prefix}/images/site_FAPPK_2.webp`, alt: "Site de la ferme" },
+];
+
+const positions = [
+  { top: '0%', left: '0%', width: '55%', height: '60%', zIndex: 30 },
+  { top: '10%', right: '0%', width: '40%', height: '45%', zIndex: 20 },
+  { bottom: '0%', left: '5%', width: '45%', height: '35%', zIndex: 10 },
+  { bottom: '5%', right: '5%', width: '45%', height: '40%', zIndex: 20 },
+];
+
+function ImageSwapper({ src, alt, positionIndex }) {
+  const pos = positions[positionIndex];
+
+  return (
+    <motion.div
+      layout
+      initial={false}
+      animate={{
+        top: pos.top,
+        left: pos.left,
+        right: pos.right,
+        bottom: pos.bottom,
+        width: pos.width,
+        height: pos.height,
+        zIndex: pos.zIndex,
+      }}
+      transition={{
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 1.5
+      }}
+      className="absolute rounded-2xl overflow-hidden shadow-lg border-2 border-white/50 bg-gray-200"
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        className="object-cover hover:scale-110 transition-transform duration-700"
+      />
+    </motion.div>
+  );
+}
 
 export default function AboutSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [order, setOrder] = useState([0, 1, 2, 3]);
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const interval = setInterval(() => {
+      setOrder((prev) => {
+        const next = [...prev];
+        const last = next.pop();
+        next.unshift(last);
+        return next;
+      });
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [isInView]);
 
   return (
     <section className="relative py-20 md:py-28 bg-white overflow-hidden leaf-pattern" ref={ref}>
@@ -80,34 +144,27 @@ export default function AboutSection() {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Image Collage */}
+          {/* Swapping Image Carousel */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative h-[400px] sm:h-[500px]"
           >
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src={`${prefix}/images/site_FAPPK_1.webp`} alt="Ferme FAPPK" fill className="object-cover" />
-                </div>
-                <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src={`${prefix}/images/poulets_1.webp`} alt="Poulets fermiers" fill className="object-cover" />
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="relative h-32 sm:h-40 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src={`${prefix}/images/lapins_1.webp`} alt="Lapins" fill className="object-cover" />
-                </div>
-                <div className="relative h-48 sm:h-56 rounded-2xl overflow-hidden img-grayscale">
-                  <Image src={`${prefix}/images/site_FAPPK_2.webp`} alt="Site de la ferme" fill className="object-cover" />
-                </div>
-              </div>
+            <div className="relative w-full h-full">
+              {images.map((img, i) => (
+                <ImageSwapper
+                  key={img.id}
+                  src={img.src}
+                  alt={img.alt}
+                  positionIndex={order[i]}
+                />
+              ))}
             </div>
+
             {/* Floating badge */}
             <motion.div
-              className="absolute -bottom-4 -right-4 sm:bottom-4 sm:right-4 bg-primary text-white px-6 py-4 rounded-2xl shadow-xl"
+              className="absolute -bottom-4 -right-4 sm:bottom-4 sm:right-4 bg-primary text-white px-6 py-4 rounded-2xl shadow-xl z-40"
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
             >
