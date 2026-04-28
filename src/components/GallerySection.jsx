@@ -73,7 +73,17 @@ const galleryImages = [
 export default function GallerySection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+
+  const handlePrev = (e) => {
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+  };
+
+  const handleNext = (e) => {
+    e.stopPropagation();
+    setSelectedIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+  };
 
   return (
     <section id="gallery" className="py-20 md:py-28 bg-cream relative overflow-hidden" ref={ref}>
@@ -116,7 +126,7 @@ export default function GallerySection() {
                 alt={item.title}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer"
-                onClick={() => setSelectedImage(item)}
+                onClick={() => setSelectedIndex(index)}
               />
               
               {/* Overlay on hover */}
@@ -152,37 +162,59 @@ export default function GallerySection() {
 
         {/* Lightbox Modal */}
         <AnimatePresence>
-          {selectedImage && (
+          {selectedIndex !== null && (
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setSelectedIndex(null)}
               className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 cursor-pointer"
             >
-              <div className="relative max-w-5xl w-full h-[80vh] flex flex-col items-center justify-center">
+              <div className="relative max-w-6xl w-full h-[85vh] flex flex-col items-center justify-center">
+                {/* Close Button */}
                 <button 
-                  className="absolute top-4 right-4 text-white hover:text-accent z-50 bg-black/50 rounded-full p-2"
+                  className="absolute top-4 right-4 md:right-0 text-white hover:text-accent z-50 bg-black/50 rounded-full p-2 transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
-                    setSelectedImage(null);
+                    setSelectedIndex(null);
                   }}
                 >
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                   </svg>
                 </button>
+
+                {/* Prev Button */}
+                <button 
+                  className="absolute left-2 md:-left-12 top-1/2 -translate-y-1/2 text-white hover:text-accent z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all"
+                  onClick={handlePrev}
+                >
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* Next Button */}
+                <button 
+                  className="absolute right-2 md:-right-12 top-1/2 -translate-y-1/2 text-white hover:text-accent z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all"
+                  onClick={handleNext}
+                >
+                  <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+
                 <div className="relative w-full h-[70vh]">
                   <Image
-                    src={selectedImage.src}
-                    alt={selectedImage.title}
+                    src={galleryImages[selectedIndex].src}
+                    alt={galleryImages[selectedIndex].title}
                     fill
                     className="object-contain"
                   />
                 </div>
                 <div className="mt-6 text-center">
-                  <h3 className="text-white text-2xl font-bold mb-2">{selectedImage.title}</h3>
-                  <p className="text-gray-300 max-w-2xl mx-auto">{selectedImage.comment}</p>
+                  <h3 className="text-white text-2xl font-bold mb-2">{galleryImages[selectedIndex].title}</h3>
+                  <p className="text-gray-300 max-w-2xl mx-auto px-12">{galleryImages[selectedIndex].comment}</p>
                 </div>
               </div>
             </motion.div>
