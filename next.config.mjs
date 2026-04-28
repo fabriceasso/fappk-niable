@@ -1,5 +1,6 @@
 const isProd = process.env.NODE_ENV === 'production';
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || (isProd ? '/fappk-niable' : '');
+const isVercel = process.env.VERCEL === '1';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || (isProd && !isVercel ? '/fappk-niable' : '');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
