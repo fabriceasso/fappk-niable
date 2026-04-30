@@ -78,7 +78,7 @@ export default function ActivitiesSection() {
     <section id="activites" className="py-20 md:py-28 bg-white relative overflow-hidden" ref={ref}>
       {/* Background shape */}
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-primary/5 rounded-full blur-3xl -ml-32" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -92,13 +92,13 @@ export default function ActivitiesSection() {
               🚜 Nos Activités
             </span>
             <h2 className="font-heading text-3xl sm:text-4xl md:text-5xl font-bold text-dark mb-4">
-              Une Agriculture <span className="gradient-text">Durable & Moderne</span>
+              Un Elevage <span className="gradient-text">Durable & Moderne</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">
-              Découvrez nos pôles d&apos;expertise et comment nous transformons l&apos;agriculture locale avec passion et savoir-faire.
+              Découvrez nos pôles d&apos;expertise et comment nous transformons l&apos;elevage local avec passion et savoir-faire.
             </p>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -109,11 +109,10 @@ export default function ActivitiesSection() {
               <button
                 key={activity.id}
                 onClick={() => setActiveTab(activity.id)}
-                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${
-                  activeTab === activity.id
-                    ? 'bg-primary text-white shadow-lg shadow-primary/20 scale-105'
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
-                }`}
+                className={`px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-300 ${activeTab === activity.id
+                  ? 'bg-primary text-white shadow-lg shadow-primary/20 scale-105'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
               >
                 {activity.title}
               </button>
@@ -146,7 +145,7 @@ export default function ActivitiesSection() {
                         <div className="w-12 h-1 bg-accent rounded-full" />
                       </div>
                     </div>
-                    
+
                     <p className="text-gray-700 text-lg leading-relaxed font-medium italic border-l-4 border-primary/20 pl-6">
                       &quot;{activity.description}&quot;
                     </p>
@@ -161,7 +160,7 @@ export default function ActivitiesSection() {
                         <p className="text-sm text-gray-600">Contrôle rigoureux à chaque étape de production.</p>
                       </div>
                     </div>
-                    
+
                     <a
                       href="#contacts"
                       className={`inline-flex items-center gap-3 px-8 py-4 bg-dark text-white font-bold rounded-full hover:bg-primary transition-all duration-300 shadow-lg`}
@@ -172,7 +171,7 @@ export default function ActivitiesSection() {
                       </svg>
                     </a>
                   </div>
-                  
+
                   <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl group">
                     <Image
                       src={`${prefix}/images/${activity.id === 'aviculture' ? 'poulets_0.webp' : activity.id === 'cuniculture' ? 'lapins_0.webp' : activity.id === 'pisciculture' ? 'poissons_0.webp' : activity.id === 'porciculture' ? 'porcs_0.webp' : 'escargots_0.png'}`}

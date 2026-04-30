@@ -145,8 +145,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'Téléphone',
-                  value: '07 07 66 40 11',
-                  href: 'tel:+2250707664011',
+                  value: '07 08 31 31 32',
+                  href: 'tel:+2250708313132',
                 },
                 {
                   icon: (
@@ -155,8 +155,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'E-mail',
-                  value: 'komessou@yahoo.fr',
-                  href: 'mailto:komessou@yahoo.fr',
+                  value: 'fappkniable@gmail.com',
+                  href: 'mailto:fappkniable@gmail.com',
                 },
                 {
                   icon: (
@@ -166,8 +166,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'WhatsApp',
-                  value: '+225 07 07 66 40 11',
-                  href: 'https://wa.me/2250707664011',
+                  value: '+225 07 08 31 31 32',
+                  href: 'https://wa.me/2250708313132',
                 },
               ].map((contact, i) => (
                 <motion.div
@@ -219,7 +219,7 @@ export default function ContactSection() {
 
             {/* Quick WhatsApp CTA */}
             <a
-              href="https://wa.me/2250707664011?text=Bonjour, je souhaite avoir des informations sur vos produits."
+              href="https://wa.me/2250708313132?text=Bonjour, je souhaite avoir des informations sur vos produits."
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366] text-white font-semibold rounded-2xl hover:bg-[#20ba5a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"

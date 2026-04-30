@@ -8,34 +8,14 @@ import prefix from '../utils/prefix';
 
 const galleryImages = [
   {
-    src: `${prefix}/images/site_FAPPK_1.webp`,
-    title: "Vue d'ensemble de la ferme",
-    comment: "Notre site principal à Niablé, un cadre verdoyant et propice à l'élevage durable."
-  },
-  {
-    src: `${prefix}/images/poulets_0.webp`,
-    title: "Nos Poulets Fermiers",
-    comment: "Élevés en plein air avec une alimentation 100% naturelle pour une saveur authentique."
-  },
-  {
-    src: `${prefix}/images/lapins_0.webp`,
-    title: "Cuniculture de Qualité",
-    comment: "Des lapins élevés dans des conditions optimales d'hygiène et de bien-être."
-  },
-  {
-    src: `${prefix}/images/poissons_0.webp`,
-    title: "Pisciculture Dynamique",
-    comment: "Nos bassins de Tilapia et de Clarias, nourris avec soin pour une croissance saine."
-  },
-  {
-    src: `${prefix}/images/porcs_0.webp`,
-    title: "Élevage Porcin",
-    comment: "Une rigueur sanitaire absolue pour garantir une viande de premier choix."
-  },
-  {
-    src: `${prefix}/images/escargots_0.png`,
+    src: `${prefix}/images/escargot.webp`,
     title: "Héliciculture",
     comment: "La délicatesse de nos escargots, un produit d'exception très prisé."
+  },
+  {
+    src: `${prefix}/images/lapins_3.webp`,
+    title: "Cuniculture de Qualité",
+    comment: "Des lapins élevés dans des conditions optimales d'hygiène et de bien-être."
   },
   {
     src: `${prefix}/images/oeufs.webp`,
@@ -43,14 +23,14 @@ const galleryImages = [
     comment: "Des œufs frais du jour, récoltés avec soin pour nos clients."
   },
   {
-    src: `${prefix}/images/site_2.webp`,
-    title: "Infrastructures Modernes",
-    comment: "Nous investissons continuellement dans des équipements modernes pour améliorer notre productivité."
+    src: `${prefix}/images/poissons_3.webp`,
+    title: "Pisciculture Dynamique",
+    comment: "Nos bassins de Tilapia et de Clarias, nourris avec soin pour une croissance saine."
   },
   {
-    src: `${prefix}/images/canards_0.png`,
-    title: "Nos Canards",
-    comment: "Élevés avec soin dans un environnement naturel et aquatique."
+    src: `${prefix}/images/poissons_5.webp`,
+    title: "Poissons Frais",
+    comment: "Une production piscicole maîtrisée pour des poissons de haute qualité."
   },
   {
     src: `${prefix}/images/pintades.webp`,
@@ -58,14 +38,54 @@ const galleryImages = [
     comment: "Une volaille rustique appréciée pour sa chair savoureuse."
   },
   {
+    src: `${prefix}/images/canards_0.png`,
+    title: "Nos Canards",
+    comment: "Élevés avec soin dans un environnement naturel et aquatique."
+  },
+  {
+    src: `${prefix}/images/porcs_4.webp`,
+    title: "Élevage Porcin",
+    comment: "Une rigueur sanitaire absolue pour garantir une viande de premier choix."
+  },
+  {
+    src: `${prefix}/images/porcs_6.webp`,
+    title: "Porcherie Moderne",
+    comment: "Des porcs élevés dans des enclos modernes et bien entretenus."
+  },
+  {
+    src: `${prefix}/images/poulets_4.webp`,
+    title: "Nos Poulets Fermiers",
+    comment: "Élevés en plein air avec une alimentation 100% naturelle pour une saveur authentique."
+  },
+  {
+    src: `${prefix}/images/poulets_5.webp`,
+    title: "Poulailler FAPPK",
+    comment: "Des volailles saines, avec un suivi vétérinaire rigoureux."
+  },
+  {
+    src: `${prefix}/images/site_2.webp`,
+    title: "Infrastructures Modernes",
+    comment: "Nous investissons continuellement dans des équipements modernes pour améliorer notre productivité."
+  },
+  {
     src: `${prefix}/images/site_3.webp`,
     title: "Nos Espaces Verts",
     comment: "Un domaine agropastoral intégré et respectueux de l'écosystème."
   },
   {
-    src: `${prefix}/images/lapins_1.webp`,
-    title: "Maternité Cunicole",
-    comment: "Une attention particulière portée à la reproduction et au sevrage."
+    src: `${prefix}/images/site_FAPPK_1.webp`,
+    title: "Vue d'ensemble de la ferme",
+    comment: "Notre site principal à Niablé, un cadre verdoyant et propice à l'élevage durable."
+  },
+  {
+    src: `${prefix}/images/site_FAPPK_2.webp`,
+    title: "Installations Agropastorales",
+    comment: "Des bâtiments adaptés et un environnement serein pour le bien-être animal."
+  },
+  {
+    src: `${prefix}/images/site_4.webp`,
+    title: "La Nature au Cœur de FAPPK",
+    comment: "Un écosystème préservé pour une agriculture saine et durable."
   }
 ];
 

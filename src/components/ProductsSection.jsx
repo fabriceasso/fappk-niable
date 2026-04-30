@@ -239,7 +239,7 @@ function ProductCard({ product, index }) {
                 </div>
 
                 <a
-                  href={`https://wa.me/2250707664011?text=Bonjour, je suis intéressé(e) par le ${product.plan} (${product.price} FCFA/mois). Merci de me donner plus d'informations.`}
+                  href={`https://wa.me/2250708313132?text=Bonjour, je suis intéressé(e) par le ${product.plan} (${product.price} FCFA/mois). Merci de me donner plus d'informations.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all duration-300 hover:shadow-lg group/cta shadow-md"
@@ -332,7 +332,7 @@ export default function ProductsSection() {
                     <span className="text-white/60 text-lg mb-2">FCFA/mois</span>
                   </div>
                   <a
-                    href={`https://wa.me/2250707664011?text=Bonjour, je suis intéressé(e) par le Plan Mixte (30 000 FCFA/mois). Merci de me donner plus d'informations.`}
+                    href={`https://wa.me/2250708313132?text=Bonjour, je suis intéressé(e) par le Plan Mixte (30 000 FCFA/mois). Merci de me donner plus d'informations.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"

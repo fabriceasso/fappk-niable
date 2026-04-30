@@ -50,7 +50,7 @@ export default function WhatsAppFloat() {
 
       {/* Button */}
       <a
-        href="https://wa.me/2250707664011?text=Bonjour, je souhaite avoir des informations sur vos produits FAPPK."
+        href="https://wa.me/2250708313132?text=Bonjour, je souhaite avoir des informations sur vos produits FAPPK."
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setShowTooltip(true)}

@@ -53,10 +53,10 @@ const features = [
 ];
 
 const images = [
-  { id: 1, src: `${prefix}/images/site_FAPPK_1.webp`, alt: "Ferme FAPPK" },
-  { id: 2, src: `${prefix}/images/poulets_1.webp`, alt: "Poulets fermiers" },
-  { id: 3, src: `${prefix}/images/lapins_1.webp`, alt: "Lapins" },
-  { id: 4, src: `${prefix}/images/site_FAPPK_2.webp`, alt: "Site de la ferme" },
+  { id: 1, src: `${prefix}/images/porcs_5.webp`, alt: "Porcs" },
+  { id: 2, src: `${prefix}/images/poulets_4.webp`, alt: "Poulets fermiers" },
+  { id: 3, src: `${prefix}/images/lapins_3.webp`, alt: "Lapins" },
+  { id: 4, src: `${prefix}/images/poissons_4.webp`, alt: "Poissons" },
 ];
 
 const positions = [
