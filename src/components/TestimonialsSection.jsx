@@ -8,18 +8,25 @@ import prefix from '../utils/prefix';
 
 const testimonials = [
   {
-    name: 'La Marmite de Kedesch',
-    role: 'Restaurateur, Yamoussoukro',
+    name: 'La Marmite de Kpongbassou',
+    role: 'Restauratrice, Yamoussoukro',
     content: 'Nous nous approvisionnons régulièrement auprès de la Ferme Agropastorale Petit Kouassi pour nos besoins en lapins et poulets. La qualité de la viande est exceptionnelle et nos clients en redemandent. Un partenaire de confiance que nous recommandons vivement !',
     rating: 5,
-    image: `${prefix}/images/temoignages/PDG_Kedesh.jpg`
+    image: `${prefix}/images/temoignages/PDG_Kpongbassou.jpg`
   },
   {
     name: 'Aka Francis',
-    role: 'Client Particulier, Abidjan',
+    role: 'Chef cusinier, Abidjan',
     content: 'J\'ai souscrit au plan mixte pour ma famille et je suis ravi du service. Les produits sont toujours frais et livrés à temps. C\'est un vrai bonheur de pouvoir manger des produits sains et locaux en toute simplicité.',
     rating: 5,
     image: `${prefix}/images/temoignages/Aka_Francis.jpg`
+  },
+  {
+    name: 'Akoubla Abla',
+    role: 'Menagere, Abengourou',
+    content: 'Je me ravitaille regulierement à la Ferme FAPPK en produits frais . Les enfants aimant beaucoup le poulets. Je suis tres satisfaite de la qualité des produits et du service de livraison.',
+    rating: 5,
+    image: `${prefix}/images/temoignages/Akouba_Abla.jpg`
   }
 ];
 
@@ -54,7 +61,7 @@ export default function TestimonialsSection() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 3.5 }}
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-1.5 bg-white/15 text-white/90 text-sm font-semibold rounded-full mb-4 backdrop-blur-sm border border-white/20">
@@ -78,7 +85,7 @@ export default function TestimonialsSection() {
                   x: i === current ? 0 : i < current ? -100 : 100,
                   zIndex: i === current ? 10 : 0
                 }}
-                transition={{ duration: 0.8, ease: "anticipate" }}
+                transition={{ duration: 3.5, ease: "anticipate" }}
                 className={`${i === current ? 'relative' : 'absolute inset-0 pointer-events-none'} w-full`}
               >
                 <div className="bg-white/10 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 border border-white/15 shadow-2xl">
@@ -120,9 +127,8 @@ export default function TestimonialsSection() {
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`transition-all duration-500 rounded-full ${
-                  i === current ? 'w-10 bg-accent h-2' : 'w-2 bg-white/30 h-2 hover:bg-white/50'
-                }`}
+                className={`transition-all duration-500 rounded-full ${i === current ? 'w-10 bg-accent h-2' : 'w-2 bg-white/30 h-2 hover:bg-white/50'
+                  }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
             ))}

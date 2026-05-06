@@ -8,7 +8,7 @@ import prefix from '../utils/prefix';
 
 const galleryImages = [
   {
-    src: `${prefix}/images/escargot.webp`,
+    src: `${prefix}/images/escargots_1.webp`,
     title: "Héliciculture",
     comment: "La délicatesse de nos escargots, un produit d'exception très prisé."
   },
@@ -148,19 +148,19 @@ export default function GallerySection() {
                 className="object-cover transition-transform duration-700 group-hover:scale-110 cursor-pointer"
                 onClick={() => setSelectedIndex(index)}
               />
-              
+
               {/* Overlay on hover */}
-              <div 
+              <div
                 className="absolute inset-0 bg-gradient-to-t from-dark/90 via-dark/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 cursor-pointer pointer-events-none"
               >
-                <motion.h4 
+                <motion.h4
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   className="text-white font-bold text-xl mb-2"
                 >
                   {item.title}
                 </motion.h4>
-                <motion.p 
+                <motion.p
                   initial={{ y: 20, opacity: 0 }}
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.1 }}
@@ -192,7 +192,7 @@ export default function GallerySection() {
             >
               <div className="relative max-w-6xl w-full h-[85vh] flex flex-col items-center justify-center">
                 {/* Close Button */}
-                <button 
+                <button
                   className="absolute top-4 right-4 md:right-0 text-white hover:text-accent z-50 bg-black/50 rounded-full p-2 transition-colors"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -205,7 +205,7 @@ export default function GallerySection() {
                 </button>
 
                 {/* Prev Button */}
-                <button 
+                <button
                   className="absolute left-2 md:-left-12 top-1/2 -translate-y-1/2 text-white hover:text-accent z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all"
                   onClick={handlePrev}
                 >
@@ -215,7 +215,7 @@ export default function GallerySection() {
                 </button>
 
                 {/* Next Button */}
-                <button 
+                <button
                   className="absolute right-2 md:-right-12 top-1/2 -translate-y-1/2 text-white hover:text-accent z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all"
                   onClick={handleNext}
                 >

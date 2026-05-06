@@ -8,10 +8,10 @@ import prefix from '../utils/prefix';
 
 const heroSlides = [
   { src: `${prefix}/images/site_FAPPK_1.webp`, alt: 'Ferme FAPPK Niablé' },
-  { src: `${prefix}/images/poulets_0.webp`, alt: 'Poulets fermiers' },
-  { src: `${prefix}/images/lapins_0.webp`, alt: 'Élevage de lapins' },
-  { src: `${prefix}/images/poissons_0.webp`, alt: 'Pisciculture' },
-  { src: `${prefix}/images/porcs_0.webp`, alt: 'Élevage porcin' },
+  { src: `${prefix}/images/poulets_4.webp`, alt: 'Poulets fermiers' },
+  { src: `${prefix}/images/lapins_4.webp`, alt: 'Élevage de lapins' },
+  { src: `${prefix}/images/site_4.webp`, alt: 'Pisciculture' },
+  { src: `${prefix}/images/porcs_6.webp`, alt: 'Élevage porcin' },
   { src: `${prefix}/images/escargots_0.png`, alt: 'Héliciculture' },
 ];
 
@@ -21,7 +21,7 @@ export default function HeroSection() {
   const videoRef = useRef(null);
   const fullText = 'Bienvenue à la Ferme Agropastorale Petit Kouassi (FAPPK) de Niablé';
 
-  // Typewriter effect
+  // Effet machine à écrire
   useEffect(() => {
     let i = 0;
     const interval = setInterval(() => {
@@ -35,7 +35,7 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, []);
 
-  // Auto-slide
+  // Défilement automatique
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroSlides.length);
@@ -45,7 +45,7 @@ export default function HeroSection() {
 
   return (
     <section id="accueil" className="relative h-screen min-h-[600px] overflow-hidden">
-      {/* Video Background */}
+      {/* Arrière-plan vidéo */}
       <div className="absolute inset-0">
         <video
           ref={videoRef}
@@ -63,11 +63,11 @@ export default function HeroSection() {
         <div className="hero-video-overlay absolute inset-0" />
       </div>
 
-      {/* Animated Background Slides (behind overlay, subtler) */}
+      {/* Diapositives d'arrière-plan animées (derrière la superposition, plus subtiles) */}
       {heroSlides.map((slide, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-20' : 'opacity-0'
+          className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-40' : 'opacity-0'
             }`}
         >
           <img
@@ -79,7 +79,7 @@ export default function HeroSection() {
         </div>
       ))}
 
-      {/* Decorative Elements */}
+      {/* Éléments décoratifs */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
           className="absolute top-20 left-10 w-3 h-3 bg-accent rounded-full opacity-40"
@@ -98,10 +98,10 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Content */}
+      {/* Contenu */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
-          {/* Logo Hero (Positioned top right of content, enlarged, faded) */}
+          {/* Logo Hero (Positionné en haut à droite du contenu, agrandi, estompé) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 0.6, x: 0 }}
@@ -119,7 +119,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
 
-            {/* Label */}
+            {/* Étiquette */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -132,7 +132,7 @@ export default function HeroSection() {
               </span>
             </motion.div>
 
-            {/* Title with typewriter */}
+            {/* Titre avec effet machine à écrire */}
             <motion.h1
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -143,7 +143,7 @@ export default function HeroSection() {
               <span className="animate-pulse text-accent">|</span>
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Sous-titre */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -153,7 +153,7 @@ export default function HeroSection() {
               Découvrez notre ferme agropastorale dédiée à l&apos;élevage et à la vente de lapins, poulets, poissons et porcs. Nous nous engageons à fournir des produits de qualité supérieure.
             </motion.p>
 
-            {/* CTAs */}
+            {/* Boutons d'appel à l'action (CTA) */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -180,7 +180,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Slide indicators */}
+      {/* Indicateurs de diapositive */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex gap-2">
         {heroSlides.map((_, i) => (
           <button
@@ -193,7 +193,7 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Scroll indicator */}
+      {/* Indicateur de défilement */}
       <motion.div
         className="absolute bottom-8 right-8 z-10 hidden md:flex flex-col items-center gap-2"
         animate={{ y: [0, 8, 0] }}
@@ -208,7 +208,7 @@ export default function HeroSection() {
           />
         </div>
       </motion.div>
-      {/* Forest Divider */}
+      {/* Séparateur Forêt */}
       <ForestDivider color="#FFFFFF" opacity={1} />
     </section>
   );

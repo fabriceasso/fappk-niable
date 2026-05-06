@@ -12,7 +12,7 @@ const products = [
     title: 'Poulets',
     description: 'Nous proposons des poulets élevés en plein air, offrant une viande riche en saveurs. Nos méthodes d\'élevage respectueuses de l\'environnement assurent la qualité supérieure de nos volailles.',
     price: '20 000',
-    image: `${prefix}/images/poulets_0.webp`,
+    image: `${prefix}/images/poulets_6.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2L9 4l-3 4-2 6v6h16v-6l-2-6-3-4-3-2zM9 22H7m10 0h-2m-8-2h12M4 14l3-2m13 2l-3-2M8 8V6m8 2V6" />
@@ -56,7 +56,7 @@ const products = [
     title: 'Lapins',
     description: 'Notre ferme se spécialise dans l\'élevage de lapins, garantissant des animaux en bonne santé et élevés dans des conditions optimales. Nos lapins sont nourris avec des aliments naturels.',
     price: '15 000',
-    image: `${prefix}/images/lapins_0.webp`,
+    image: `${prefix}/images/lapins_4.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14v2m-4-7V5a2 2 0 114 0v4m0 0V5a2 2 0 114 0v4m-8 5a4 4 0 108 0 4 4 0 00-8 0z" />
@@ -78,7 +78,7 @@ const products = [
     title: 'Poissons',
     description: 'Nous proposons une variété de poissons issus de notre propre élevage piscicole. Nos bassins sont gérés de manière durable pour garantir la fraîcheur.',
     price: '25 000',
-    image: `${prefix}/images/poissons_0.webp`,
+    image: `${prefix}/images/poissons_5.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 12c0 3.866-3.134 7-7 7s-7-3.134-7-7 3.134-7 7-7 7 3.134 7 7zm-3-2l-4 4m0-4l4 4" />
@@ -100,7 +100,7 @@ const products = [
     title: 'Porcs',
     description: 'Notre élevage de porcs est conduit avec le plus grand soin, en privilégiant une alimentation saine et un environnement propre.',
     price: '35 000',
-    image: `${prefix}/images/porcs_0.webp`,
+    image: `${prefix}/images/porcs_5.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
@@ -122,7 +122,7 @@ const products = [
     title: 'Escargots',
     description: 'Nous élevons des escargots dans un milieu contrôlé garantissant un goût unique et une chair tendre.',
     price: '35 000',
-    image: `${prefix}/images/escargots_0.png`,
+    image: `${prefix}/images/escargots_1.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z M12 14v7 M7 12l-5 5 M17 12l5 5" />
@@ -196,7 +196,7 @@ function ProductCard({ product, index }) {
           )}
         </div>
 
-        {/* Content */}
+        {/* Contenu */}
         <div className="p-6 flex flex-col flex-grow">
           <p className="text-gray-600 text-sm leading-relaxed mb-6">
             {product.description}
@@ -264,12 +264,12 @@ export default function ProductsSection() {
 
   return (
     <section id="produits" className="relative py-20 md:py-28 bg-cream overflow-hidden" ref={ref}>
-      {/* Background decoration */}
+      {/* Décoration d'arrière-plan */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/3 rounded-full blur-[100px]" />
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-accent/5 rounded-full blur-[80px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
+        {/* En-tête de section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -291,14 +291,14 @@ export default function ProductsSection() {
           </p>
         </motion.div>
 
-        {/* Products Grid */}
+        {/* Grille de produits */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
           {products.map((product, i) => (
             <ProductCard key={product.id} product={product} index={i} />
           ))}
         </div>
 
-        {/* Mix Plan - Featured */}
+        {/* Plan Mixte - Mis en avant */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -306,7 +306,7 @@ export default function ProductsSection() {
           className="mt-16"
         >
           <div className="relative bg-gradient-to-br from-primary via-primary-dark to-dark-green rounded-3xl overflow-hidden shadow-2xl">
-            {/* Decorative pattern */}
+            {/* Motif décoratif */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute inset-0" style={{
                 backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',
@@ -364,7 +364,7 @@ export default function ProductsSection() {
                     ))}
                   </ul>
 
-                  {/* Schematic icons decoration */}
+                  {/* Décoration d'icônes schématiques */}
                   <div className="flex gap-4 mt-8 pt-6 border-t border-white/10">
                     {products.map((p, i) => (
                       <motion.span

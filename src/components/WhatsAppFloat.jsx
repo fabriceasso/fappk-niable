@@ -32,7 +32,7 @@ export default function WhatsAppFloat() {
       transition={{ type: 'spring', stiffness: 260, damping: 20 }}
       className="fixed bottom-6 right-6 z-50 flex items-end gap-3"
     >
-      {/* Tooltip */}
+      {/* Info-bulle */}
       <AnimatePresence>
         {showTooltip && (
           <motion.div
@@ -48,7 +48,7 @@ export default function WhatsAppFloat() {
         )}
       </AnimatePresence>
 
-      {/* Button */}
+      {/* Bouton */}
       <a
         href="https://wa.me/2250708313132?text=Bonjour, je souhaite avoir des informations sur vos produits FAPPK."
         target="_blank"

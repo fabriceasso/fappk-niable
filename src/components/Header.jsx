@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import prefix from '../utils/prefix';
 
 const navItems = [
@@ -51,7 +52,7 @@ export default function Header() {
             </div>
           </a>
 
-          {/* Desktop Nav */}
+          {/* Navigation Bureau */}
           <nav className="hidden lg:flex items-center gap-6">
             <div className="flex items-center gap-1">
               {navItems.map((item) => (
@@ -86,10 +87,10 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* Bouton de menu mobile */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="md:hidden relative w-10 h-10 flex items-center justify-center"
+            className="lg:hidden relative w-10 h-10 flex items-center justify-center"
             aria-label="Menu"
           >
             <div className="flex flex-col gap-1.5">
@@ -101,7 +102,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Navigation Mobile */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -109,21 +110,24 @@ export default function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white/98 backdrop-blur-lg border-t border-gray-100 overflow-hidden"
+            className="lg:hidden bg-white/98 backdrop-blur-lg border-t border-gray-100 overflow-hidden"
           >
             <div className="px-4 py-6 flex flex-col gap-2">
               {navItems.map((item, i) => (
-                <motion.a
+                <motion.div
                   key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.1 }}
-                  className="px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-all"
                 >
-                  {item.label}
-                </motion.a>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="relative z-20 px-4 py-3 text-gray-700 font-medium rounded-xl hover:bg-primary/5 hover:text-primary transition-all block w-full"
+                  >
+                    {item.label}
+                  </Link>
+                </motion.div>
               ))}
               <div className="mt-4 pt-6 border-t border-gray-100 px-4">
                 <a 
