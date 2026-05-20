@@ -33,6 +33,11 @@ const galleryImages = [
     comment: "Une production piscicole maîtrisée pour des poissons de haute qualité."
   },
   {
+    src: `${prefix}/images/poissons_6.webp`,
+    title: "Soin de nos Bassins",
+    comment: "Un contrôle quotidien et rigoureux de l'eau pour assurer le bien-être et la vitalité de nos poissons."
+  },
+  {
     src: `${prefix}/images/pintades.webp`,
     title: "Élevage de Pintades",
     comment: "Une volaille rustique appréciée pour sa chair savoureuse."
@@ -83,9 +88,24 @@ const galleryImages = [
     comment: "Des bâtiments adaptés et un environnement serein pour le bien-être animal."
   },
   {
-    src: `${prefix}/images/site_4.webp`,
+    src: `${prefix}/images/site_FAPPK_3.webp`,
     title: "La Nature au Cœur de FAPPK",
-    comment: "Un écosystème préservé pour une agriculture saine et durable."
+    comment: "Un écosystème naturel préservé pour une production animale saine et durable."
+  },
+  {
+    src: `${prefix}/images/site_5.webp`,
+    title: "Aménagements de la Ferme",
+    comment: "Une organisation rigoureuse de l'espace pour une cohabitation harmonieuse de toutes nos activités agropastorales."
+  },
+  {
+    src: `${prefix}/images/site_6.webp`,
+    title: "Pratiques Éco-Responsables",
+    comment: "Des pratiques agricoles durables respectant la biodiversité et préservant la richesse de nos terres."
+  },
+  {
+    src: `${prefix}/images/site_4.webp`,
+    title: "Activité Quotidienne",
+    comment: "Le dynamisme et la rigueur de nos équipes sur le terrain, garants de l'excellence FAPPK."
   }
 ];
 

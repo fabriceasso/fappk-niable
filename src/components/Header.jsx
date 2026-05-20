@@ -29,11 +29,10 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-lg shadow-primary/5'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -59,18 +58,17 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/10 ${
-                    scrolled ? 'text-gray-700 hover:text-primary' : 'text-white/90 hover:text-white'
-                  }`}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 hover:bg-primary/10 ${scrolled ? 'text-gray-700 hover:text-primary' : 'text-white/90 hover:text-white'
+                    }`}
                 >
                   {item.label}
                 </a>
               ))}
             </div>
-            
+
             <div className={`flex flex-col items-end gap-0.5 border-l pl-6 transition-colors ${scrolled ? 'border-gray-200' : 'border-white/20'}`}>
-              <a 
-                href="tel:+2250708313132" 
+              <a
+                href="tel:+2250708313132"
                 className={`text-sm font-bold flex items-center gap-2 hover:text-accent transition-colors ${scrolled ? 'text-primary' : 'text-white'}`}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -78,11 +76,11 @@ export default function Header() {
                 </svg>
                 07 08 31 31 32
               </a>
-              <a 
-                href="mailto:fappkniable@gmail.com" 
+              <a
+                href="mailto:infos@fappk.com"
                 className={`text-xs font-medium hover:text-accent transition-colors ${scrolled ? 'text-gray-500' : 'text-white/70'}`}
               >
-                fappkniable@gmail.com
+                infos@fappk.com
               </a>
             </div>
           </nav>
@@ -130,8 +128,8 @@ export default function Header() {
                 </motion.div>
               ))}
               <div className="mt-4 pt-6 border-t border-gray-100 px-4">
-                <a 
-                  href="tel:+2250708313132" 
+                <a
+                  href="tel:+2250708313132"
                   className="flex items-center gap-4 text-primary font-bold mb-4"
                 >
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
@@ -141,8 +139,8 @@ export default function Header() {
                   </div>
                   <span>07 08 31 31 32</span>
                 </a>
-                <a 
-                  href="mailto:fappkniable@gmail.com" 
+                <a
+                  href="mailto:infos@fappk.com"
                   className="flex items-center gap-4 text-gray-600 font-medium"
                 >
                   <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
@@ -150,7 +148,7 @@ export default function Header() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <span>fappkniable@gmail.com</span>
+                  <span>infos@fappk.com</span>
                 </a>
               </div>
             </div>

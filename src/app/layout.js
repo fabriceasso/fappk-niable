@@ -2,11 +2,11 @@ import './globals.css';
 
 export const metadata = {
   title: 'FAPPK - Ferme Agropastorale Petit Kouassi de Niablé',
-  description: 'Ferme agropastorale spécialisée dans l\'élevage et la vente de lapins, poulets, poissons, porcs, canards et escargots à Niablé, Côte d\'Ivoire. Abonnements produits frais, livraison Abidjan.',
-  keywords: 'ferme agropastorale, Niablé, Côte d\'Ivoire, lapins, poulets, poissons, porcs, canards, escargots, élevage, abonnement viande fraîche, livraison Abidjan',
+  description: 'Ferme agropastorale spécialisée dans l\'élevage de lapins, poulets, poissons, porcs, canards et escargots à Niablé. Produits fermiers frais de qualité supérieure, livraison à Abidjan et à l\'intérieur de la Côte d\'Ivoire.',
+  keywords: 'ferme agropastorale, Niablé, Côte d\'Ivoire, lapins de chair, poulets fermiers, poissons frais, élevage de porcs, canards de lac, escargots gros calibre, cuniculture, héliciculture, pisciculture, aviculture, produits fermiers frais, livraison Abidjan, livraison interieur du pays, achat porc sur pied, tilapia frais Côte d\'Ivoire',
   openGraph: {
     title: 'FAPPK - Ferme Agropastorale Petit Kouassi de Niablé',
-    description: 'Découvrez notre ferme agropastorale dédiée à l\'élevage de qualité. Abonnements mensuels, livraison gratuite.',
+    description: 'Découvrez notre ferme agropastorale dédiée à l\'élevage de qualité. Traitement personnalisé, livraison à Abidjan et à l\'intérieur de la Côte d\'Ivoire.',
     type: 'website',
     locale: 'fr_CI',
     siteName: 'FAPPK',

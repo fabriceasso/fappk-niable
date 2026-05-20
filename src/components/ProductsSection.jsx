@@ -11,17 +11,16 @@ const products = [
     id: 'poulets',
     title: 'Poulets',
     description: 'Nous proposons des poulets élevés en plein air, offrant une viande riche en saveurs. Nos méthodes d\'élevage respectueuses de l\'environnement assurent la qualité supérieure de nos volailles.',
-    price: '20 000',
+    price: '+2Kg',
     image: `${prefix}/images/poulets_6.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 2L9 4l-3 4-2 6v6h16v-6l-2-6-3-4-3-2zM9 22H7m10 0h-2m-8-2h12M4 14l3-2m13 2l-3-2M8 8V6m8 2V6" />
       </svg>
     ),
-    plan: 'Plan Volailles',
-    planDesc: '8 poulets par mois, livraison gratuite à domicile. Poulets de 2kg minimum.',
+    plan: 'Volailles',
+    planDesc: ' livraison gratuite à domicile. Poulets de 2kg minimum.',
     features: [
-      '8 poulets par mois',
       'Livraison gratuite',
       'Poulets de 2kg min'
     ],
@@ -33,17 +32,16 @@ const products = [
     id: 'canards',
     title: 'Canards',
     description: 'Nous proposons aussi ces canards élevés dans nos lacs, offrant une viande riche en saveurs. Nos méthodes d\'élevage assurent la qualité supérieure de nos volailles.',
-    price: '20 000',
+    price: 'Super qualité',
     image: `${prefix}/images/canards_0.png`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12h18M5 12a7 7 0 0114 0M7 12V9a2 2 0 114 0v3m2 0V9a2 2 0 114 0v3" />
       </svg>
     ),
-    plan: 'Plan Canards',
-    planDesc: '5 canards par mois, livraison incluse. Idéal pour rôtis et confits.',
+    plan: 'Canards',
+    planDesc: 'Livraison incluse. Idéal pour rôtis et confits.',
     features: [
-      '5 canards par mois',
       'Livraison incluse',
       'Qualité supérieure'
     ],
@@ -55,17 +53,16 @@ const products = [
     id: 'lapins',
     title: 'Lapins',
     description: 'Notre ferme se spécialise dans l\'élevage de lapins, garantissant des animaux en bonne santé et élevés dans des conditions optimales. Nos lapins sont nourris avec des aliments naturels.',
-    price: '15 000',
+    price: 'Recettes offertes',
     image: `${prefix}/images/lapins_4.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14v2m-4-7V5a2 2 0 114 0v4m0 0V5a2 2 0 114 0v4m-8 5a4 4 0 108 0 4 4 0 00-8 0z" />
       </svg>
     ),
-    plan: 'Plan Lapins',
-    planDesc: '4 lapins par mois, nettoyage inclus. Recettes exclusives offertes.',
+    plan: 'Lapins',
+    planDesc: 'Nettoyage inclus. Recettes exclusives offertes.',
     features: [
-      '4 lapins par mois',
       'Nettoyage inclus',
       'Recettes offertes'
     ],
@@ -77,17 +74,16 @@ const products = [
     id: 'poissons',
     title: 'Poissons',
     description: 'Nous proposons une variété de poissons issus de notre propre élevage piscicole. Nos bassins sont gérés de manière durable pour garantir la fraîcheur.',
-    price: '25 000',
+    price: 'Fraîcheur garantie',
     image: `${prefix}/images/poissons_5.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 12c0 3.866-3.134 7-7 7s-7-3.134-7-7 3.134-7 7-7 7 3.134 7 7zm-3-2l-4 4m0-4l4 4" />
       </svg>
     ),
-    plan: 'Plan Poissons',
-    planDesc: '15kg de Tilapia ou Carpe, livraison sous glace. Possibilité de poissons vivants.',
+    plan: 'Poissons',
+    planDesc: 'Livraison sous glace. Possibilité de poissons vivants.',
     features: [
-      '15kg de Tilapia/Carpe',
       'Livraison sous glace',
       'Fraîcheur garantie'
     ],
@@ -99,17 +95,16 @@ const products = [
     id: 'porcs',
     title: 'Porcs',
     description: 'Notre élevage de porcs est conduit avec le plus grand soin, en privilégiant une alimentation saine et un environnement propre.',
-    price: '35 000',
+    price: 'Prêt à cuisiner',
     image: `${prefix}/images/porcs_5.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
       </svg>
     ),
-    plan: 'Plan Porcs',
-    planDesc: '10kg de viande de porc, choix des morceaux privilégié. Découpé et emballé.',
+    plan: 'Porcs',
+    planDesc: 'Découpé et emballé.',
     features: [
-      '10kg de viande',
       'Choix des morceaux',
       'Prêt à cuisiner'
     ],
@@ -121,17 +116,16 @@ const products = [
     id: 'escargots',
     title: 'Escargots',
     description: 'Nous élevons des escargots dans un milieu contrôlé garantissant un goût unique et une chair tendre.',
-    price: '35 000',
+    price: 'Gros calibre',
     image: `${prefix}/images/escargots_1.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 14l9-5-9-5-9 5 9 5z M12 14v7 M7 12l-5 5 M17 12l5 5" />
       </svg>
     ),
-    plan: 'Plan Escargots',
-    planDesc: '10kg d\'escargots gros calibre, nettoyés et prêts à cuire.',
+    plan: 'Escargots',
+    planDesc: 'Gros calibre, nettoyés et prêts à cuire.',
     features: [
-      '10kg d\'escargots',
       'Gros calibre',
       'Prêt à cuire'
     ],
@@ -142,18 +136,17 @@ const products = [
 ];
 
 const mixPlan = {
-  title: 'Plan Mixte',
-  description: 'Le meilleur de notre ferme dans un seul pack. Profitez d\'une sélection variée de nos meilleurs produits chaque mois.',
-  price: '30 000',
+  title: 'Commande Mixte',
+  description: 'Le meilleur de notre ferme dans un seul pack. Profitez d\'une sélection variée de nos meilleurs produits.',
+  price: 'Réductions sur achats en gros',
   icon: (
     <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-7.714 2.143L11 21l-2.286-6.857L1 12l7.714-2.143L11 3z" />
     </svg>
   ),
   features: [
-    '5 lapins + 5 poulets par mois',
-    'Remise fidélité de 10%',
-    'Inclus option poisson à prix réduit',
+    'Choisissez vos produits préférés',
+    'Livraison incluse',
     'Réductions sur achats en gros'
   ]
 };
@@ -190,7 +183,7 @@ function ProductCard({ product, index }) {
           {product.price && (
             <div className="absolute bottom-4 right-4 focus-visible:scale-105 transition-transform">
               <span className="bg-primary text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
-                {product.price} FCFA<span className="text-xs font-normal opacity-80">/mois</span>
+                {product.price}
               </span>
             </div>
           )}
@@ -239,12 +232,12 @@ function ProductCard({ product, index }) {
                 </div>
 
                 <a
-                  href={`https://wa.me/2250708313132?text=Bonjour, je suis intéressé(e) par le ${product.plan} (${product.price} FCFA/mois). Merci de me donner plus d'informations.`}
+                  href={`https://wa.me/2250708313132?text=Bonjour, je voudrais commander vos ${product.plan}. Merci de me donner plus d'informations.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all duration-300 hover:shadow-lg group/cta shadow-md"
                 >
-                  <span>Souscrire via WhatsApp</span>
+                  <span>Commander via WhatsApp</span>
                   <svg className="w-5 h-5 group-hover/cta:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
@@ -329,15 +322,15 @@ export default function ProductsSection() {
                   </p>
                   <div className="flex items-end gap-2 mb-8">
                     <span className="text-5xl md:text-6xl font-bold text-accent font-heading">{mixPlan.price}</span>
-                    <span className="text-white/60 text-lg mb-2">FCFA/mois</span>
+                    <span className="text-white/60 text-lg mb-2"> </span>
                   </div>
                   <a
-                    href={`https://wa.me/2250708313132?text=Bonjour, je suis intéressé(e) par le Plan Mixte (30 000 FCFA/mois). Merci de me donner plus d'informations.`}
+                    href={`https://wa.me/2250708313132?text=Bonjour, je suis intéressé(e) par plusieurs de vos produits. Merci de me donner plus d'informations.`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                   >
-                    <span>Souscrire Maintenant</span>
+                    <span>Demander Maintenant</span>
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>

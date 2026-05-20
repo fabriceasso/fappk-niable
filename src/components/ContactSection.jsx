@@ -20,7 +20,7 @@ export default function ContactSection() {
     try {
       // Obfuscated URL to avoid false positives from security software
       const endpoint = ["https://", "api", ".", "web3forms", ".", "com", "/submit"].join("");
-      
+
       const response = await fetch(endpoint, {
         method: "POST",
         body: formData,
@@ -82,113 +82,112 @@ export default function ContactSection() {
               </h3>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">Nom & Prénoms *</label>
-                      <input
-                        type="text"
-                        name="name"
-                        required
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-                        placeholder="Votre nom complet"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">Email</label>
-                      <input
-                        type="email"
-                        name="email"
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-                        placeholder="votre@email.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">Téléphone *</label>
-                      <input
-                        type="tel"
-                        name="phone"
-                        required
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-                        placeholder="+225 00 00 00 00 00"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-600 mb-1.5">Objet *</label>
-                      <input
-                        type="text"
-                        name="subject"
-                        required
-                        className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-                        placeholder="Objet de votre message"
-                      />
-                    </div>
-                  </div>
-
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Message *</label>
-                    <textarea
-                      name="message"
+                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Nom & Prénoms *</label>
+                    <input
+                      type="text"
+                      name="name"
                       required
-                      rows={4}
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
-                      placeholder="Votre message..."
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                      placeholder="Votre nom complet"
                     />
                   </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Email</label>
+                    <input
+                      type="email"
+                      name="email"
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                      placeholder="votre@email.com"
+                    />
+                  </div>
+                </div>
 
-                  <button
-                    type="submit"
-                    disabled={status === "loading"}
-                    className={`w-full sm:w-auto px-8 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 ${
-                      status === "loading" ? "bg-gray-400 cursor-not-allowed" : "bg-primary hover:bg-primary-dark"
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Téléphone *</label>
+                    <input
+                      type="tel"
+                      name="phone"
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                      placeholder="+225 00 00 00 00 00"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-600 mb-1.5">Objet *</label>
+                    <input
+                      type="text"
+                      name="subject"
+                      required
+                      className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+                      placeholder="Objet de votre message"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-600 mb-1.5">Message *</label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
+                    placeholder="Votre message..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className={`w-full sm:w-auto px-8 py-3.5 text-white font-semibold rounded-xl transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 ${status === "loading" ? "bg-gray-400 cursor-not-allowed" : "bg-primary hover:bg-primary-dark"
                     }`}
+                >
+                  {status === "loading" ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      <span>Envoi en cours...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span>Envoyer le message</span>
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                      </svg>
+                    </>
+                  )}
+                </button>
+
+                {status === "success" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl flex items-center gap-3"
                   >
-                    {status === "loading" ? (
-                      <>
-                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        <span>Envoi en cours...</span>
-                      </>
-                    ) : (
-                      <>
-                        <span>Envoyer le message</span>
-                        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                        </svg>
-                      </>
-                    )}
-                  </button>
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <p className="text-sm">Votre message a été envoyé avec succès ! Nous vous répondrons bientôt.</p>
+                  </motion.div>
+                )}
 
-                  {status === "success" && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl flex items-center gap-3"
-                    >
-                      <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <p className="text-sm">Votre message a été envoyé avec succès ! Nous vous répondrons bientôt.</p>
-                    </motion.div>
-                  )}
-
-                  {status === "error" && (
-                    <motion.div 
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl flex items-center gap-3"
-                    >
-                      <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <p className="text-sm">{resultMessage}</p>
-                    </motion.div>
-                  )}
-                </form>
+                {status === "error" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl flex items-center gap-3"
+                  >
+                    <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <p className="text-sm">{resultMessage}</p>
+                  </motion.div>
+                )}
+              </form>
             </div>
           </motion.div>
 
@@ -230,8 +229,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'E-mail',
-                  value: 'fappkniable@gmail.com',
-                  href: 'mailto:fappkniable@gmail.com',
+                  value: 'infos@fappk.com',
+                  href: 'mailto:infos@fappk.com',
                 },
                 {
                   icon: (
@@ -300,7 +299,7 @@ export default function ContactSection() {
               className="flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366] text-white font-semibold rounded-2xl hover:bg-[#20ba5a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"
             >
               <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               <span>Discuter sur WhatsApp</span>
             </a>
