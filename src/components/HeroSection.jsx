@@ -45,8 +45,8 @@ export default function HeroSection() {
 
   return (
     <section id="accueil" className="relative h-screen min-h-[600px] overflow-hidden">
-      {/* Arrière-plan vidéo */}
-      <div className="absolute inset-0">
+      {/* Arrière-plan vidéo (masquée, le carrousel s'en charge) */}
+      <div className="absolute inset-0 hidden">
         <video
           ref={videoRef}
           muted
