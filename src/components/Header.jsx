@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import prefix from '../utils/prefix';
+import { PHONE, PHONE_DISPLAY, EMAIL } from '../config/constants';
 
 const navItems = [
   { label: 'Accueil', href: '#accueil' },
@@ -68,19 +69,19 @@ export default function Header() {
 
             <div className={`flex flex-col items-end gap-0.5 border-l pl-6 transition-colors ${scrolled ? 'border-gray-200' : 'border-white/20'}`}>
               <a
-                href="tel:+2250708313132"
+                href={`tel:+${PHONE}`}
                 className={`text-sm font-bold flex items-center gap-2 hover:text-accent transition-colors ${scrolled ? 'text-primary' : 'text-white'}`}
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                07 08 31 31 32
+                {PHONE_DISPLAY}
               </a>
               <a
-                href="mailto:infos@fappk.com"
+                href={`mailto:${EMAIL}`}
                 className={`text-xs font-medium hover:text-accent transition-colors ${scrolled ? 'text-gray-500' : 'text-white/70'}`}
               >
-                infos@fappk.com
+                {EMAIL}
               </a>
             </div>
           </nav>
@@ -129,7 +130,7 @@ export default function Header() {
               ))}
               <div className="mt-4 pt-6 border-t border-gray-100 px-4">
                 <a
-                  href="tel:+2250708313132"
+                  href={`tel:+${PHONE}`}
                   className="flex items-center gap-4 text-primary font-bold mb-4"
                 >
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
@@ -137,10 +138,10 @@ export default function Header() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <span>07 08 31 31 32</span>
+                  <span>{PHONE_DISPLAY}</span>
                 </a>
                 <a
-                  href="mailto:infos@fappk.com"
+                  href={`mailto:${EMAIL}`}
                   className="flex items-center gap-4 text-gray-600 font-medium"
                 >
                   <div className="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center">
@@ -148,7 +149,7 @@ export default function Header() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <span>infos@fappk.com</span>
+                  <span>{EMAIL}</span>
                 </a>
               </div>
             </div>

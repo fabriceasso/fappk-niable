@@ -2,6 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { PHONE, WHATSAPP_MESSAGE } from '../config/constants';
 
 export default function WhatsAppFloat() {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -50,7 +51,7 @@ export default function WhatsAppFloat() {
 
       {/* Bouton */}
       <a
-        href="https://wa.me/2250708313132?text=Bonjour, je souhaite avoir des informations sur vos produits FAPPK."
+        href={`https://wa.me/${PHONE}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
         target="_blank"
         rel="noopener noreferrer"
         onMouseEnter={() => setShowTooltip(true)}

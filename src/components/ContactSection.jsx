@@ -3,6 +3,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import ForestDivider from './ForestDivider';
+import { PHONE, PHONE_INTL, EMAIL, WHATSAPP_MESSAGE } from '../config/constants';
 
 export default function ContactSection() {
   const ref = useRef(null);
@@ -34,7 +35,8 @@ export default function ContactSection() {
         setTimeout(() => setStatus("idle"), 5000);
       } else {
         setStatus("error");
-        setResultMessage(data.message || "Une erreur est survenue.");
+        const msg = data.message || "Une erreur est survenue.";
+        setResultMessage(msg.replace(/[<>&"']/g, ''));
       }
     } catch (error) {
       setStatus("error");
@@ -89,6 +91,7 @@ export default function ContactSection() {
                       type="text"
                       name="name"
                       required
+                      maxLength={100}
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       placeholder="Votre nom complet"
                     />
@@ -98,6 +101,7 @@ export default function ContactSection() {
                     <input
                       type="email"
                       name="email"
+                      maxLength={254}
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       placeholder="votre@email.com"
                     />
@@ -111,6 +115,8 @@ export default function ContactSection() {
                       type="tel"
                       name="phone"
                       required
+                      maxLength={20}
+                      pattern="[\+]?[0-9\s\-\(\)]{8,20}"
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       placeholder="+225 00 00 00 00 00"
                     />
@@ -121,6 +127,7 @@ export default function ContactSection() {
                       type="text"
                       name="subject"
                       required
+                      maxLength={200}
                       className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
                       placeholder="Objet de votre message"
                     />
@@ -133,6 +140,7 @@ export default function ContactSection() {
                     name="message"
                     required
                     rows={4}
+                    maxLength={2000}
                     className="w-full px-4 py-3 rounded-xl bg-gray-50 border border-gray-200 text-dark placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
                     placeholder="Votre message..."
                   />
@@ -219,8 +227,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'Téléphone',
-                  value: '07 08 31 31 32',
-                  href: 'tel:+2250708313132',
+                  value: PHONE_DISPLAY,
+                  href: `tel:+${PHONE}`,
                 },
                 {
                   icon: (
@@ -229,8 +237,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'E-mail',
-                  value: 'infos@fappk.com',
-                  href: 'mailto:infos@fappk.com',
+                  value: EMAIL,
+                  href: `mailto:${EMAIL}`,
                 },
                 {
                   icon: (
@@ -240,8 +248,8 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'WhatsApp',
-                  value: '+225 07 08 31 31 32',
-                  href: 'https://wa.me/2250708313132',
+                  value: PHONE_INTL,
+                  href: `https://wa.me/${PHONE}`,
                 },
               ].map((contact, i) => (
                 <motion.div
@@ -285,7 +293,7 @@ export default function ContactSection() {
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
+                referrerPolicy="strict-origin-when-cross-origin"
                 title="Localisation FAPPK Niablé"
                 className="rounded-2xl"
               />
@@ -293,7 +301,7 @@ export default function ContactSection() {
 
             {/* Quick WhatsApp CTA */}
             <a
-              href="https://wa.me/2250708313132?text=Bonjour, je souhaite avoir des informations sur vos produits."
+              href={`https://wa.me/${PHONE}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 px-6 py-4 bg-[#25D366] text-white font-semibold rounded-2xl hover:bg-[#20ba5a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-1"

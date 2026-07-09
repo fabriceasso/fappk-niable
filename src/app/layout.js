@@ -1,7 +1,8 @@
 import './globals.css';
 import Script from 'next/script';
+import { PHONE, EMAIL, SITE_URL } from '../config/constants';
 
-const siteUrl = 'https://fappk.com';
+const siteUrl = SITE_URL;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -10,8 +11,8 @@ const jsonLd = {
   alternateName: 'FAPPK',
   description: 'Ferme agropastorale spécialisée dans l\'élevage de lapins, poulets, poissons, porcs, canards et escargots à Niablé. Produits fermiers frais de qualité supérieure.',
   url: siteUrl,
-  telephone: '+2250708313132',
-  email: 'infos@fappk.com',
+  telephone: `+${PHONE}`,
+  email: EMAIL,
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Niablé',
@@ -123,6 +124,9 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/logo_FAPPK.jpeg" />
         <meta name="theme-color" content="#228B22" />
+        <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
+        <meta httpEquiv="X-Frame-Options" content="DENY" />
+        <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

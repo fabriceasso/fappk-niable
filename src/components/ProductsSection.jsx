@@ -5,6 +5,7 @@ import { useRef, useState } from 'react';
 import Image from 'next/image';
 import ForestDivider from './ForestDivider';
 import prefix from '../utils/prefix';
+import { PHONE } from '../config/constants';
 
 const products = [
   {
@@ -53,7 +54,7 @@ const products = [
     id: 'lapins',
     title: 'Lapins',
     description: 'Notre ferme se spécialise dans l\'élevage de lapins, garantissant des animaux en bonne santé et élevés dans des conditions optimales. Nos lapins sont nourris avec des aliments naturels.',
-    price: 'Recettes offertes',
+    price: 'Nettoyage inclus',
     image: `${prefix}/images/lapins_4.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -116,7 +117,7 @@ const products = [
     id: 'escargots',
     title: 'Escargots',
     description: 'Nous élevons des escargots dans un milieu contrôlé garantissant un goût unique et une chair tendre.',
-    price: 'Gros calibre',
+    price: 'Naturels',
     image: `${prefix}/images/escargots_1.webp`,
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -126,7 +127,7 @@ const products = [
     plan: 'Escargots',
     planDesc: 'Gros calibre, nettoyés et prêts à cuire.',
     features: [
-      'Gros calibre',
+      'Naturels',
       'Prêt à cuire'
     ],
     color: 'from-emerald-600 to-emerald-800',
@@ -147,7 +148,7 @@ const mixPlan = {
   features: [
     'Choisissez vos produits préférés',
     'Livraison incluse',
-    'Réductions sur achats en gros'
+    'Réductions pour les achats en gros'
   ]
 };
 
@@ -232,7 +233,7 @@ function ProductCard({ product, index }) {
                 </div>
 
                 <a
-                  href={`https://wa.me/2250708313132?text=Bonjour, je voudrais commander vos ${product.plan}. Merci de me donner plus d'informations.`}
+                  href={`https://wa.me/${PHONE}?text=${encodeURIComponent(`Bonjour, je voudrais commander vos ${product.plan}. Merci de me donner plus d'informations.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-4 w-full inline-flex items-center justify-center gap-2 px-6 py-4 bg-primary text-white font-bold rounded-xl hover:bg-primary-dark transition-all duration-300 hover:shadow-lg group/cta shadow-md"
@@ -325,7 +326,7 @@ export default function ProductsSection() {
                     <span className="text-white/60 text-lg mb-2"> </span>
                   </div>
                   <a
-                    href={`https://wa.me/2250708313132?text=Bonjour, je suis intéressé(e) par plusieurs de vos produits. Merci de me donner plus d'informations.`}
+                    href={`https://wa.me/${PHONE}?text=${encodeURIComponent('Bonjour, je suis intéressé(e) par plusieurs de vos produits. Merci de me donner plus d\'informations.')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-3 px-8 py-4 bg-accent text-dark font-bold rounded-full hover:bg-accent-dark transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
