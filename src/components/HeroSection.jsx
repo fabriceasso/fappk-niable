@@ -84,30 +84,21 @@ export default function HeroSection() {
       {/* Contenu */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
-          {/* Logo Hero avec dégradé jaune-vert */}
+          {/* Logo Hero */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1.5 }}
             className="absolute top-[-140px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:top-0 lg:right-8 lg:left-auto pointer-events-none"
           >
-            <div className="relative w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[350px] lg:h-[350px]">
-              <Image
-                src={`${prefix}/images/logo_hero.png`}
-                alt="FAPPK Logo Hero"
-                width={350}
-                height={350}
-                className="w-full h-full object-contain"
-                priority
-              />
-              <div
-                className="absolute inset-0 mix-blend-color"
-                style={{
-                  background: 'linear-gradient(135deg, #FFD700 0%, #228B22 100%)',
-                  opacity: 0.35
-                }}
-              />
-            </div>
+            <Image
+              src={`${prefix}/images/logo_hero.png`}
+              alt="FAPPK Logo Hero"
+              width={150}
+              height={150}
+              className="w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[350px] lg:h-[350px]"
+              priority
+            />
           </motion.div>
 
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
