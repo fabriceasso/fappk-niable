@@ -125,7 +125,6 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/images/logo_FAPPK.jpeg" />
         <meta name="theme-color" content="#228B22" />
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
-        <meta httpEquiv="X-Frame-Options" content="DENY" />
         <meta httpEquiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
         <script
           type="application/ld+json"

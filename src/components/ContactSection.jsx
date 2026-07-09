@@ -5,6 +5,8 @@ import { useRef, useState } from 'react';
 import ForestDivider from './ForestDivider';
 import { PHONE, PHONE_INTL, EMAIL, WHATSAPP_MESSAGE } from '../config/constants';
 
+const PHONE_DISPLAY = '07 08 31 31 32';
+
 export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
