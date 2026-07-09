@@ -106,7 +106,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1.5 }}
-            className="absolute top-0 right-4 sm:right-8 pointer-events-none"
+            className="absolute top-[-20px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:top-0 lg:right-8 lg:left-auto pointer-events-none"
           >
             <Image
               src={`${prefix}/images/logo_hero.png`}
