@@ -106,7 +106,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1.5 }}
-            className="absolute top-[-60px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:top-0 lg:right-8 lg:left-auto pointer-events-none"
+            className="absolute top-[-100px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:top-0 lg:right-8 lg:left-auto pointer-events-none"
           >
             <Image
               src={`${prefix}/images/logo_hero.png`}
@@ -120,18 +120,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
 
-            {/* Étiquette */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full mb-6 border border-white/20"
-            >
-              <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-              <span className="text-white/90 text-sm font-medium tracking-wide">
-                🌿 Niablé, Côte d&apos;Ivoire
-              </span>
-            </motion.div>
+
 
             {/* Titre avec effet machine à écrire */}
             <motion.h1
