@@ -104,7 +104,7 @@ export default function HeroSection() {
           {/* Logo Hero (Positionné en haut à droite du contenu, agrandi, estompé) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 0.6, x: 0 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1.5 }}
             className="absolute top-0 right-8 pointer-events-none hidden lg:block"
           >
