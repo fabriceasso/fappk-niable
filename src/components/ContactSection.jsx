@@ -260,7 +260,7 @@ export default function ContactSection() {
                     </svg>
                   ),
                   label: 'Facebook',
-                  value: 'FAPPK Radioandon',
+                  value: 'FAPPK de Niablé',
                   href: 'https://www.facebook.com/fapkadioandon?locale=fr_FR',
                 },
               ].map((contact, i) => (
