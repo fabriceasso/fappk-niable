@@ -49,15 +49,12 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         <video
           ref={videoRef}
-          autoPlay
           muted
-          loop
           playsInline
           preload="metadata"
           poster={`${prefix}/images/site_FAPPK_1.webp`}
           className="w-full h-full object-cover"
         >
-          <source src={`${prefix}/images/hero.webm`} type="video/webm" />
           <source src={`${prefix}/images/hero.mp4`} type="video/mp4" />
         </video>
         <div className="hero-video-overlay absolute inset-0" />
@@ -106,7 +103,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1.5 }}
-            className="absolute top-[-200px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:top-0 lg:right-8 lg:left-auto pointer-events-none"
+            className="absolute top-[-140px] left-1/2 -translate-x-1/2 lg:translate-x-0 lg:top-0 lg:right-8 lg:left-auto pointer-events-none"
           >
             <Image
               src={`${prefix}/images/logo_hero.png`}
