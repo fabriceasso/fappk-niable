@@ -101,18 +101,19 @@ export default function HeroSection() {
       {/* Contenu */}
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative">
-          {/* Logo Hero (Positionné en haut à droite du contenu, agrandi, estompé) */}
+          {/* Logo Hero */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 1.5 }}
-            className="absolute top-0 right-8 pointer-events-none hidden lg:block"
+            className="absolute top-0 right-4 sm:right-8 pointer-events-none"
           >
             <Image
               src={`${prefix}/images/logo_hero.png`}
               alt="FAPPK Logo Hero"
-              width={350}
-              height={350}
+              width={150}
+              height={150}
+              className="w-[120px] h-[120px] sm:w-[200px] sm:h-[200px] lg:w-[350px] lg:h-[350px]"
               priority
             />
           </motion.div>
