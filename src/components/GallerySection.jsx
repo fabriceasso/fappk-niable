@@ -218,6 +218,7 @@ export default function GallerySection() {
                     e.stopPropagation();
                     setSelectedIndex(null);
                   }}
+                  aria-label="Fermer la galerie"
                 >
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -228,6 +229,7 @@ export default function GallerySection() {
                 <button
                   className="absolute left-2 md:-left-12 top-1/2 -translate-y-1/2 text-white hover:text-accent z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all"
                   onClick={handlePrev}
+                  aria-label="Image précédente"
                 >
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -238,6 +240,7 @@ export default function GallerySection() {
                 <button
                   className="absolute right-2 md:-right-12 top-1/2 -translate-y-1/2 text-white hover:text-accent z-50 bg-black/50 hover:bg-black/80 rounded-full p-3 transition-all"
                   onClick={handleNext}
+                  aria-label="Image suivante"
                 >
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
