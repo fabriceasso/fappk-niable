@@ -64,7 +64,7 @@ export default function HeroSection() {
       {heroSlides.map((slide, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === current ? 'opacity-40 z-[1]' : 'opacity-0 z-0'
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === current ? 'opacity-80 z-[1]' : 'opacity-0 z-0'
             }`}
         >
           <img
