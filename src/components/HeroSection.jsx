@@ -60,11 +60,11 @@ export default function HeroSection() {
         <div className="hero-video-overlay absolute inset-0" />
       </div>
 
-      {/* Diapositives d'arrière-plan animées (derrière la superposition, plus subtiles) */}
+      {/* Diapositives d'arrière-plan animées */}
       {heroSlides.map((slide, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-40' : 'opacity-0'
+          className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === current ? 'opacity-40 z-[1]' : 'opacity-0 z-0'
             }`}
         >
           <img
